@@ -1,0 +1,26 @@
+{
+  "name": "shannon-fano-code-2019SEP27",
+  "version": "1.0.0",
+  "description": "Implementation of a Shannon-Fano coding scheme.",
+  "main": "lib/main.js",
+  "repository": "https://github.com/spacekitcat/shannon-fano-code-2019SEP27",
+  "author": "Lisa \"Danger\" Burton",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "eslint src/**",
+    "build:babel": "babel src -d lib",
+    "build": "yarn build:babel",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.6.0",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.4.0",
+    "jest": "24.9"
+  }
+}
