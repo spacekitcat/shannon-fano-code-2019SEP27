@@ -8,16 +8,14 @@ const getNodeListSum = (nodeList, stopAtIndex) => {
   return sum;
 };
 
+const getNodeListOptimalPivot = nodeList =>
+  getNodeListSum(nodeList, nodeList.length - 1) / 2;
+
 const getWeightDiff = (firstWeight, secondWeight) =>
   Math.max(firstWeight, secondWeight) - Math.min(firstWeight, secondWeight);
 
-export default nodeList => {
-  if (nodeList && nodeList.length <= 1) {
-    ({ left: nodeList, right: [] });
-  }
-
-  const nodeListTotalWeight = getNodeListSum(nodeList, nodeList.length - 1);
-  const nodeListPivotWeight = (nodeListTotalWeight / 2);
+const getWeightDiffs = nodeList => {
+  const nodeListPivotWeight = getNodeListOptimalPivot(nodeList);
   let indexWeightDiffsWithPivot = [];
   for (let i = 0; i < nodeList.length; ++i) {
     indexWeightDiffsWithPivot[i] = getWeightDiff(
@@ -26,9 +24,22 @@ export default nodeList => {
     );
   }
 
-  const pivotIndex = indexWeightDiffsWithPivot.indexOf(
-    Math.min(...indexWeightDiffsWithPivot)
+  return indexWeightDiffsWithPivot;
+};
+
+const getIndexOfActualPivot = nodeListOptimalPivotDiffs => {
+  return nodeListOptimalPivotDiffs.indexOf(
+    Math.min(...nodeListOptimalPivotDiffs)
   );
+};
+
+export default nodeList => {
+  if (nodeList && nodeList.length <= 1) {
+    ({ left: nodeList, right: [] });
+  }
+
+  const indexWeightDiffs = getWeightDiffs(nodeList);
+  const pivotIndex = getIndexOfActualPivot(indexWeightDiffs);
 
   return {
     left: nodeList.slice(0, pivotIndex + 1),
