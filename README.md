@@ -46,82 +46,82 @@ File contents: `HELLOWORLD` (outputs are UTF-8 representation).
 
 ```bash
 $ node . resources/a.txt
-000	68
-0010	69
-0011	72
-01	76
-10	79
-110	82
-111	87
+000	D
+0010	E
+0011	H
+01	L
+10	O
+110	R
+111	W
 ```
 
 File contents: `The quick brown fox jumps over the lazy dog.` (outputs are UTF-8 representation).
 
 ```bash
 $ node . resources/b.txt
-000	32
-0010	46
-00110	84
-00111	97
-01000	98
-010010	99
-010011	100
-0101	101
-01100	102
-01101	103
-01110	104
-01111	105
-10000	106
-10001	107
-10010	108
-100110	109
-100111	110
-1010	111
-10110	112
-10111	113
-11000	114
-11001	115
-11010	116
-11011	117
-11100	118
-11101	119
-11110	120
-111110	121
-111111	122
+000
+0010	.
+00110	T
+00111	a
+01000	b
+010010	c
+010011	d
+0101	e
+01100	f
+01101	g
+01110	h
+01111	i
+10000	j
+10001	k
+10010	l
+100110	m
+100111	n
+1010	o
+10110	p
+10111	q
+11000	r
+11001	s
+11010	t
+11011	u
+11100	v
+11101	w
+11110	x
+111110	y
+111111	z
 ```
 
 File contents: `$$$$$zzzzzzzzzzzzzzzzzzzzzzz*********G@@@` (outputs are UTF-8 representation).
 
 ```bash
 $ node . resources/c.txt
-00    36
-010   42
-0110  64
-0111  71
-1	  122
+00	$
+010	*
+0110	@
+0111	G
+1	z
 ```
 
 File contents: `A_DEAD_DAD_CEDED_A_BAD_BABE_A_BEADED_ABACA_BED` (outputs are UTF-8 representation). This example is from Wikipedia article on `Huffman_coding` and it matches.
 
 ```bash
 $ node . resources/d.txt
-00	65
-010	66
-011	67
-10	68
-110	69
-111	95
+00	A
+010	B
+011	C
+10	D
+110	E
+111	_
 ```
 
 File contents: `AAAAAAAAAAAAAAABBBBBBBCCCCCCDDDDDDEEEEE` (outputs are UTF-8 representation). This example is from Wikipedia article on `Shannon-Fano_coding` and it matches.
 
 ```bash
 $ node . resources/e.txt
-00	65
-01	66
-10	67
-110	68
-111	69
+00	A
+01	B
+10	C
+110	D
+111	E
 ```
 
 

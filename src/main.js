@@ -11,7 +11,7 @@ const createLeafList = occurrences => {
     if (key === '10') {
       return null;
     }
-    return new Node(occurrences[key], key);
+    return new Node(occurrences[key], Buffer.from([key]));
   });
 };
 
@@ -33,7 +33,7 @@ const traverseTree = (rootNode, prefix = '') => {
   }
 
   if (rootNode.getLeftChild() === null && rootNode.getRightChild() === null) {
-    process.stdout.write(`${prefix}\t${rootNode.getKey()}\n`);
+    process.stdout.write(`${prefix}\t${rootNode.getKey().toString('utf8')}\n`);
   }
 
   if (rootNode.getLeftChild() !== null) {
